@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "857293568918",
+    "project_id": "foodfighter-d9488",
+    "storage_bucket": "foodfighter-d9488.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:857293568918:android:66c5ea6366d2534fbcfbb7",
+        "android_client_info": {
+          "package_name": "kr.ac.jbnu.se.foodfighter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "857293568918-995cbnj8op23m2j9kijjm3i0o72uk88i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBiXPZ6_peyMAvV4GXAFksMqkYDF0Qnh_E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "857293568918-995cbnj8op23m2j9kijjm3i0o72uk88i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

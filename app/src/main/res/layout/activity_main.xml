@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="kr.ac.jbnu.se.foodfighter.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="1dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="84dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/adress_text"
+                android:layout_width="312dp"
+                android:layout_height="80dp"
+                android:fontFamily="@font/bmjua"
+                android:gravity="center"
+                android:text="전주시 덕진구 금암1동"
+                android:textColor="#A33841"
+                android:textSize="28dp" />
+
+            <Button
+                android:id="@+id/Refresh_bt"
+                android:layout_width="68dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:text="Refresh" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="275dp"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:id="@+id/point_frame"
+                android:layout_width="218dp"
+                android:layout_height="match_parent" >
+
+                <ImageButton
+                    android:id="@+id/POINT_imgbt"
+                    android:layout_marginTop="-10dp"
+                    android:layout_width="205dp"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/point_bt" />
+
+                <TextView
+                    android:id="@+id/point_text"
+                    android:fontFamily="@font/bmjua"
+                    android:textColor="#FFFFFF"
+                    android:textSize="28dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0P" />
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TextView" />
+
+            <LinearLayout
+                android:layout_width="196dp"
+                android:layout_height="246dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/review_manage_imgbt"
+                    android:layout_width="130dp"
+                    android:layout_height="80dp"
+                    android:layout_marginRight="30dp"
+                    android:background="@android:color/transparent"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/review_manage_bt" />
+
+                <ImageButton
+                    android:id="@+id/search_imgbt"
+                    android:layout_width="130dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="30dp"
+                    android:background="@android:color/transparent"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/rest_search_bt" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/QR_imgbt"
+            android:scaleType="fitCenter"
+            android:layout_width="350dp"
+            android:layout_height="134dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            app:srcCompat="@drawable/qr_bt" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

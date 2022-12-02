@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
+    <application
+        android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Navermap"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31"
+        tools:replace="android:allowBackup">
+        <activity
+            android:name="kr.ac.jbnu.se.foodfighter.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+
+
+        </activity>
+        <activity android:name="kr.ac.jbnu.se.foodfighter.KakaoMapViewActivity"/>
+        <activity android:name="kr.ac.jbnu.se.foodfighter.ReviewListActivity"/>
+        <activity android:name="kr.ac.jbnu.se.foodfighter.ReviewPageActivity"/>
+        <activity android:name="kr.ac.jbnu.se.foodfighter.ReviewDetailActivity"/>
+        <activity android:name="kr.ac.jbnu.se.foodfighter.GoogleMapActivity"/>
+
+        <meta-data android:name="com.kakao.sdk.AppKey" android:value="229fd7ea420d9af5e0c82fc5c2e96b4f"/>
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyAdAoG1rhZnzFMDsS6-yqgtnbAD6lay8QM"/>
+
+    </application>
+
+</manifest>

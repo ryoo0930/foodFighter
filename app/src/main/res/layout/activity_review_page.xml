@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/reviewText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:fontFamily="@font/bmjua"
+        android:textSize="20dp"
+
+        android:text="방문 기록"
+        >
+    </TextView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:weightSum="10"
+        >
+
+
+        <TextView
+            android:id="@+id/titleView"
+            android:fontFamily="@font/bmjua"
+            android:textColor="#A33841"
+            android:textSize="24dp"
+            android:layout_width="226dp"
+            android:layout_height="34dp"
+            android:layout_weight="1"
+            android:text="" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/reviewEdit"
+        android:fontFamily="@font/bmjua"
+        android:layout_width="match_parent"
+        android:layout_height="233dp"
+        android:background="@null"
+        android:hint="리뷰를 작성해주세요 "
+        android:inputType="textMultiLine"
+        android:lines="8"
+        android:maxLines="10"
+        android:minLines="5"
+        android:scrollbars="vertical"></EditText>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="245dp"
+        android:layout_gravity="center"
+        android:orientation="vertical"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        >
+        <Button
+            android:id="@+id/cancelButton"
+            android:fontFamily="@font/bmjua"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="5"
+            android:text="취소"
+            >
+        </Button>
+        <Button
+            android:id="@+id/okButton"
+            android:fontFamily="@font/bmjua"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="5"
+            android:text="확인"
+            >
+        </Button>
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/textView_result" />
+
+    <Button
+        android:id="@+id/scan_bt"
+        android:fontFamily="@font/bmjua"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SCAN QR CODE" />
+</LinearLayout>
