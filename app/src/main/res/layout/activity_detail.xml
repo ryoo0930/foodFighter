@@ -22,6 +22,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:fontFamily="@font/bmjua"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:padding="16dp"
@@ -29,6 +30,7 @@
 
                 <TextView
                     android:id="@+id/title_tv"
+                    android:fontFamily="@font/bmjua"
                     android:padding="16dp"
                     android:background="#eeeeee"
                     android:layout_width="match_parent"
@@ -42,6 +44,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"/>
             <TextView
+                android:fontFamily="@font/bmjua"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="16dp"
@@ -49,6 +52,7 @@
 
             <TextView
                 android:id="@+id/content_tv"
+                android:fontFamily="@font/bmjua"
                 android:layout_width="match_parent"
                 android:layout_height="580dp"
                 android:background="#eeeeee"
