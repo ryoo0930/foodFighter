@@ -1,5 +1,6 @@
 package kr.ac.jbnu.se.foodfighter;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -19,8 +20,7 @@ import org.w3c.dom.Text;
 
 public class ReviewDetailActivity extends AppCompatActivity {
 
-    static int num = 0;
-    String id = Integer.toString(num);
+
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference();
@@ -30,8 +30,11 @@ public class ReviewDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
+        Intent intent = getIntent();
+        String board_seq = intent.getStringExtra("board_seq");
+
         TextView title_tv = (TextView) findViewById(R.id.title_tv);
-        myRef.child(num).child("title").addValueEventListener(new ValueEventListener() {
+        myRef.child("reviews").child("덕진동").child(board_seq).child("title").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String value = snapshot.getValue(String.class);
@@ -45,10 +48,11 @@ public class ReviewDetailActivity extends AppCompatActivity {
         });
 
         TextView content_tv = (TextView) findViewById(R.id.content_tv);
-        myRef.child("Review").child(id).addValueEventListener(new ValueEventListener() {
+        myRef.child("reviews").child("덕진동").child(board_seq).child("content").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
+                String value = snapshot.getValue(String.class);
+                content_tv.setText(value);
             }
 
             @Override
