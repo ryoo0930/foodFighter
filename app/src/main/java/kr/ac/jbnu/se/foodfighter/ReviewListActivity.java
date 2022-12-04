@@ -30,7 +30,7 @@ public class ReviewListActivity extends AppCompatActivity {
 
     ListView listView;
     String[] locationItems = {"중앙동", "풍남동", "노송동", "완산동", "서학동", "중화산동", "평화동", "서신동", "삼천동", "효자동", "진북동", "인후동", "덕진동", "금암동", "팔복동", "우아동", "호성동", "송천동", "조촌동", "여의동", "혁신동"};
-    String location = "덕진동";
+    String location = "";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
