@@ -15,8 +15,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
@@ -37,8 +39,10 @@ public class ReviewPageActivity extends AppCompatActivity {
     private IntentIntegrator qrScan;
     String location;
 
+    int maxid = 0;
+    int sametitle = 0;
 
-    String id;
+
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference();
@@ -128,6 +132,56 @@ public class ReviewPageActivity extends AppCompatActivity {
             } else {
                 AtomicLong newId = new AtomicLong();
                 newId.set(task.getResult().getChildrenCount());
+                //데이터 비교 후 포인트 추가============
+
+                myRef.child("point").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        int value = (int)snapshot.getValue(Integer.class);
+                        value += 500;
+                        myRef.child("point").setValue(value);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
+                myRef.child("reviews").child(location).addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        for (DataSnapshot postSnapshot: snapshot.getChildren()) {
+                            String reviewtitle = postSnapshot.getValue(Review.class).getTitle();
+                            if (reviewtitle == title) {
+                                myRef.child("point").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                        int value = (int)snapshot.getValue(Integer.class);
+                                        value -= 500;
+                                        myRef.child("point").setValue(value);
+                                    }
+
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError error) {
+
+                                    }
+                                });
+                            }
+
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        // TODO: not implemented
+                    }
+                });
+
+
+
+
+                //==================================
                 myRef.child("reviews").child(location).child(newId.toString()).setValue(new Review(title, review));
             }
         });
