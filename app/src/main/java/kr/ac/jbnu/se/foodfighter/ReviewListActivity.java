@@ -37,31 +37,28 @@ public class ReviewListActivity extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference();
 
-
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 this,
-                R.layout.list_view_custom,
+                android.R.layout.simple_list_item_1,
                 new ArrayList<>()
         );
 
-
-
-        List<Review> reviews = new ArrayList<>();
         listView = (ListView) findViewById(R.id.listview);
 
-        listView.setAdapter(adapter);
+        ArrayList<String> reviews = new ArrayList<>();
 
+        listView.setAdapter(adapter);
 
         myRef.child("reviews").child("덕진동").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot postSnapshot: snapshot.getChildren()) {
-                    reviews.add(postSnapshot.getValue(Review.class));
+                    String reviewtitle = postSnapshot.getValue(Review.class).getTitle();
+                    adapter.add(reviewtitle);
+
                 }
                 // list view update
-
                 adapter.notifyDataSetChanged();
-
             }
 
             @Override
@@ -69,8 +66,6 @@ public class ReviewListActivity extends AppCompatActivity {
                 // TODO: not implemented
             }
         });
-
-
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -80,8 +75,5 @@ public class ReviewListActivity extends AppCompatActivity {
             }
         });
 
-
     }
-
-
 }

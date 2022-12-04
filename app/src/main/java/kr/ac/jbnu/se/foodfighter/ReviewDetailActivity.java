@@ -31,7 +31,7 @@ public class ReviewDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail);
 
         TextView title_tv = (TextView) findViewById(R.id.title_tv);
-        myRef.child("Title").child(id).addValueEventListener(new ValueEventListener() {
+        myRef.child(num).child("title").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String value = snapshot.getValue(String.class);
