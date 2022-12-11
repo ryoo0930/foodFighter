@@ -600,18 +600,9 @@ public class GoogleMapActivity extends AppCompatActivity implements OnMapReadyCa
                 .listener(GoogleMapActivity.this)
                 .key("AIzaSyAocmOarF0nGiknNBvHPgQbaeDnJREQ5A8")
                 .latlng(location.latitude, location.longitude)//현재 위치
-                .radius(300) //500 미터 내에서 검색
+                .radius(500) //500 미터 내에서 검색
                 .type(PlaceType.RESTAURANT) //음식점
                 .build()
                 .execute();
     }
-
-
-
-
 }
-
-
-
-
-

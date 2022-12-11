@@ -61,5 +61,8 @@ dependencies {
     //QR
     implementation 'com.journeyapps:zxing-android-embedded:3.4.0'
 
+    //slide
+    implementation 'com.github.hannesa2:AndroidSlidingUpPanel:4.2.1'
+
 
 }

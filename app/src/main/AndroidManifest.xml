@@ -38,6 +38,7 @@
         <activity android:name="kr.ac.jbnu.se.foodfighter.ReviewPageActivity"/>
         <activity android:name="kr.ac.jbnu.se.foodfighter.ReviewDetailActivity"/>
         <activity android:name="kr.ac.jbnu.se.foodfighter.GoogleMapActivity"/>
+        <activity android:name="kr.ac.jbnu.se.foodfighter.PointActivity"/>
 
         <meta-data android:name="com.kakao.sdk.AppKey" android:value="229fd7ea420d9af5e0c82fc5c2e96b4f"/>
         <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyAdAoG1rhZnzFMDsS6-yqgtnbAD6lay8QM"/>
