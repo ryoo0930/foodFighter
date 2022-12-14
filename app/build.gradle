@@ -41,6 +41,7 @@ dependencies {
     //Firebase
     implementation platform('com.google.firebase:firebase-bom:31.0.3')
     implementation 'com.google.firebase:firebase-database'
+    implementation 'com.google.firebase:firebase-auth'
 
     //Retrofit2
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
@@ -52,6 +53,7 @@ dependencies {
     implementation 'com.google.android.gms:play-services-maps:18.1.0'
     implementation 'com.google.android.gms:play-services-location:21.0.1'
     implementation 'com.google.android.material:material:1.4.0-alpha02'
+    implementation 'com.google.android.gms:play-services-auth:19.0.0'
 
 
     //kakao

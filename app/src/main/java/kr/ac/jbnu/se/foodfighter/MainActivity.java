@@ -14,8 +14,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -34,10 +38,23 @@ public class MainActivity extends AppCompatActivity {
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference();
 
+    public String userId;
+    public String userFamilyName;
+    public String userGivenName;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        userId = getIntent().getStringExtra("userId");
+        userFamilyName = getIntent().getStringExtra("userFamilyName");
+        userGivenName = getIntent().getStringExtra("userGivenName");
+
+
+
+        TextView adress_text = (TextView) findViewById(R.id.adress_text);
+        adress_text.setText("환영합니다! "+userFamilyName+userGivenName+"님!");
 
         //Btn_Event=================================================================================
 
@@ -46,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), ReviewPageActivity.class);
+                intent.putExtra("userId", userId);
                 startActivity(intent);
 
             }
@@ -56,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), ReviewListActivity.class);
+                intent.putExtra("userId", userId);
                 startActivity(intent);
             }
         });
@@ -90,6 +109,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), PointActivity.class);
+                intent.putExtra("userId", userId);
                 startActivity(intent);
             }
         });

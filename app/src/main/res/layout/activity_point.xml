@@ -36,5 +36,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0P" />
+
+        <Button
+            android:id="@+id/exchange_5000P_bt"
+            android:fontFamily="@font/bmjua"
+            android:textSize="30dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:text="5000P 교환" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
