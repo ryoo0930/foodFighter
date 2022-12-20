@@ -37,7 +37,6 @@ public class LoginActivity extends AppCompatActivity {
 
     // 구글  로그인 버튼
     private SignInButton btnGoogleLogin;
-    private Button btnLogoutGoogle;
 
     public String userId;
     public String userFamilyName;
@@ -65,10 +64,7 @@ public class LoginActivity extends AppCompatActivity {
             signIn();
         });
 
-        btnLogoutGoogle = findViewById(R.id.btn_logout_google);
-        btnLogoutGoogle.setOnClickListener(view -> {
-            signOut(); //로그아웃
-        });
+
     }
 
     private void signIn(){
